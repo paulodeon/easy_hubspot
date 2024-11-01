@@ -18,7 +18,7 @@ This gem utilizes the `v3` hubspot-api
 - [Error Handling](#error-handling)
 
 ### Dependencies
-- [gem "httparty", "~> 0.21.0"](https://github.com/jnunemaker/httparty)
+- [gem "httparty", "~> 0.22.0"](https://github.com/jnunemaker/httparty)
 
 ### Compatibility
 - `ruby >= 2.6.10`
@@ -54,12 +54,12 @@ rails g easy_hubspot:install
 Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/contacts)
 
 ```ruby
-# Create a contact 
-  # required: body 
+# Create a contact
+  # required: body
   # returns: parsed hubspot contact
   EasyHubspot::Contact.create_contact(properties: { email: '', firstname: '', lastname: '' , etc: ''})
 
-# Update a contact 
+# Update a contact
 # required: contact_id, body
 # - contact_id: can be a hubspot contact_id or email
 # returns: parsed hubspot contact
@@ -73,20 +73,20 @@ Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/c
 # or
   EasyHubspot::Contact.get_contact('test@gmail.com')
 
-# Get all contacts 
+# Get all contacts
 # returns: parsed hubspot contacts
   EasyHubspot::Contact.get_contacts
 
-# Delete a contact 
-# required: contact_id 
+# Delete a contact
+# required: contact_id
 # - contact_id: can be a hubspot contact_id or email
 # returns: {status: 'success'}
   EasyHubspot::Contact.delete_contact(123)
-# or 
+# or
   EasyHubspot::Contact.delete_contact('test@gmail.com')
 
 # Update or Create a contact
-# required: email, body 
+# required: email, body
 # returns: parsed hubspot contact
   EasyHubspot::Contact.update_or_create_contact(properties: { email: '', firstname: '', lastname: '' , etc: ''})
 
@@ -94,16 +94,16 @@ Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/c
 # Parse hubspot contact example
 {:id=>"701",
  :properties=>
-  {:createdate=>"2023-02-08T20:10:36.858Z", 
-  :email=>"amber_becker@quigley.io", 
-  :firstname=>"Amber", 
-  :hs_content_membership_status=>"inactive", 
-  :hs_is_contact=>"true", 
-  :hs_is_unworked=>"true", 
-  :hs_object_id=>"701", 
-  :hs_pipeline=>"contacts-lifecycle-pipeline", 
-  :lastmodifieddate=>"2023-02-14T18:24:07.654Z", 
-  :lastname=>"Quigley", 
+  {:createdate=>"2023-02-08T20:10:36.858Z",
+  :email=>"amber_becker@quigley.io",
+  :firstname=>"Amber",
+  :hs_content_membership_status=>"inactive",
+  :hs_is_contact=>"true",
+  :hs_is_unworked=>"true",
+  :hs_object_id=>"701",
+  :hs_pipeline=>"contacts-lifecycle-pipeline",
+  :lastmodifieddate=>"2023-02-14T18:24:07.654Z",
+  :lastname=>"Quigley",
   :lifecyclestage=>"lead"},
  :createdAt=>"2023-02-08T20:10:36.858Z",
  :updatedAt=>"2023-02-14T18:24:07.654Z",
@@ -112,7 +112,7 @@ Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/c
 
 ### Deals
 ```ruby
-# Create a deal 
+# Create a deal
   # required: body
   # returns: parsed hubspot deal
   EasyHubspot::Deal.create_deal(properties: { dealname: '', amount: '', etc: ''})
@@ -143,7 +143,7 @@ Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/c
 ### Products
 Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/products)
 ```ruby
-# Create a product 
+# Create a product
   # required: body
   # returns: parsed hubspot product
   EasyHubspot::Product.create_product(properties: { name: '', price: '', etc: ''})
@@ -205,7 +205,7 @@ Please refrence the [hubspot docs](https://developers.hubspot.com/docs/api/crm/l
 
 ## Multiple Access Tokens
 
-If you need to choose your access token at call time, you can pass the access token as an argument to class methods as 
+If you need to choose your access token at call time, you can pass the access token as an argument to class methods as
 follows:
 
 ```ruby
